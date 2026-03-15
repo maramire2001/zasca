@@ -13,7 +13,7 @@ Docs interactivas:
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse
 from pydantic import BaseModel, Field
 from typing import Optional
 import os
@@ -107,6 +107,53 @@ def raiz():
     """Sirve el frontend HTML."""
     html_path = os.path.join(os.path.dirname(__file__), "frontend.html")
     return FileResponse(html_path, media_type="text/html")
+
+
+@app.get("/manifest.json", include_in_schema=False)
+def pwa_manifest():
+    """Manifiesto PWA para instalar como app en móvil."""
+    return JSONResponse({
+        "name": "ZASCA — El arte del insulto literario",
+        "short_name": "ZASCA",
+        "description": "El arte de poner a cada quién en su lugar.",
+        "start_url": "/",
+        "display": "standalone",
+        "background_color": "#16110a",
+        "theme_color": "#16110a",
+        "orientation": "portrait-primary",
+        "icons": [
+            {
+                "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%2316110a'/><text x='50%25' y='58%25' font-family='serif' font-size='260' font-weight='bold' fill='%23c9a84c' text-anchor='middle'>Z</text></svg>",
+                "sizes": "any",
+                "type": "image/svg+xml",
+                "purpose": "any maskable"
+            }
+        ]
+    })
+
+
+@app.get("/sw.js", include_in_schema=False)
+def service_worker():
+    """Service Worker para funcionamiento offline."""
+    sw = """
+const CACHE = 'zasca-v1';
+self.addEventListener('install', e => {
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(['/'])));
+  self.skipWaiting();
+});
+self.addEventListener('activate', e => {
+  e.waitUntil(caches.keys().then(keys =>
+    Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+  ));
+  self.clients.claim();
+});
+self.addEventListener('fetch', e => {
+  if (e.request.mode === 'navigate') {
+    e.respondWith(fetch(e.request).catch(() => caches.match('/')));
+  }
+});
+"""
+    return PlainTextResponse(sw, media_type="application/javascript")
 
 
 @app.get("/api", tags=["General"])
