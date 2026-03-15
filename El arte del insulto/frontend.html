@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>ZASCA — El arte de poner a cada quién en su lugar</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:        #16110a;
+    --bg2:       #1e1710;
+    --bg3:       #252015;
+    --gold:      #c9a84c;
+    --gold-lt:   #e8cc80;
+    --gold-dk:   #8a6e25;
+    --cream:     #f5f0e4;
+    --muted:     #7a6a50;
+    --red:       #cc1111;
+    --red-dk:    #991010;
+    --border:    rgba(201,168,76,0.25);
+  }
+
+  html, body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .app {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0 0 60px;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ─────────────────────────────── */
+  .header {
+    text-align: center;
+    padding: 52px 24px 36px;
+    border-bottom: 1px solid var(--border);
+  }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 700;
+    letter-spacing: 22px;
+    color: var(--gold);
+    line-height: 1;
+    text-indent: 22px;
+  }
+  .tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--muted);
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── SECTION LABELS ─────────────────────── */
+  .section {
+    padding: 28px 20px 0;
+  }
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 14px;
+    background: var(--gold);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  /* ── OBJETIVO CARDS ─────────────────────── */
+  .cards-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding: 4px 20px 12px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 0 -20px;
+  }
+  .cards-scroll::-webkit-scrollbar { display: none; }
+
+  .obj-card {
+    flex-shrink: 0;
+    width: 130px;
+    height: 160px;
+    border-radius: 10px;
+    border: 1.5px solid var(--border);
+    background: var(--bg3);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 14px 12px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color .2s, transform .15s;
+    user-select: none;
+  }
+  .obj-card .card-icon {
+    position: absolute;
+    top: 14px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 32px;
+    opacity: .55;
+  }
+  .obj-card .card-name {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: var(--cream);
+    line-height: 1.3;
+    text-align: center;
+    width: 100%;
+  }
+  .obj-card:hover { border-color: var(--gold-dk); transform: translateY(-2px); }
+  .obj-card.active {
+    border-color: var(--gold);
+    background: linear-gradient(160deg, #2a2010 0%, #1e1808 100%);
+    box-shadow: 0 0 20px rgba(201,168,76,0.2);
+  }
+  .obj-card.active .card-name { color: var(--gold-lt); }
+
+  /* ── AUTORÍA BUTTONS ────────────────────── */
+  .autores-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+  }
+  .autor-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    background: var(--bg3);
+    color: var(--muted);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all .2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .autor-btn:hover { border-color: var(--gold-dk); color: var(--gold-lt); }
+  .autor-btn.active {
+    border-color: var(--gold);
+    background: radial-gradient(circle, #2e2210 0%, #1a1408 100%);
+    color: var(--gold);
+    box-shadow: 0 0 14px rgba(201,168,76,0.25);
+  }
+  .autor-tooltip {
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    text-align: center;
+    margin-top: 8px;
+    padding: 0 20px;
+    min-height: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  /* ── SLIDER ─────────────────────────────── */
+  .slider-wrap {
+    padding: 0 20px;
+  }
+  .slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .nivel-value {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold) 0%, var(--gold) 50%, var(--bg3) 50%, var(--bg3) 100%);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, var(--gold-lt), var(--gold));
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 10px rgba(201,168,76,0.5);
+    cursor: pointer;
+    transition: box-shadow .2s;
+  }
+  input[type=range]::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 18px rgba(201,168,76,0.7);
+  }
+  input[type=range]::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--bg);
+    cursor: pointer;
+  }
+  .slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+  .slider-labels span {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* ── QUOTE BOX ──────────────────────────── */
+  .quote-section {
+    padding: 20px 20px 0;
+  }
+  .quote-box {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px 24px;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--cream);
+    text-align: center;
+  }
+  .quote-author {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-align: right;
+    margin-top: 14px;
+  }
+  .quote-placeholder {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--muted);
+    text-align: center;
+  }
+  .quote-loading {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); animation: pulse 1.2s infinite; }
+  .dot:nth-child(2) { animation-delay: .2s; }
+  .dot:nth-child(3) { animation-delay: .4s; }
+  @keyframes pulse { 0%,100%{opacity:.2;transform:scale(.8)} 50%{opacity:1;transform:scale(1)} }
+
+  /* ── ACTION BUTTONS ─────────────────────── */
+  .actions {
+    display: flex;
+    gap: 12px;
+    padding: 20px 20px 0;
+  }
+  .btn-replicar {
+    flex: 2;
+    background: var(--gold);
+    color: var(--bg);
+    border: none;
+    border-radius: 8px;
+    padding: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s, transform .1s;
+  }
+  .btn-replicar:hover { background: var(--gold-lt); }
+  .btn-replicar:active { transform: scale(.97); }
+
+  .btn-copiar {
+    flex: 1;
+    background: transparent;
+    color: var(--gold);
+    border: 1.5px solid var(--gold);
+    border-radius: 8px;
+    padding: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s, transform .1s;
+    position: relative;
+  }
+  .btn-copiar:hover { background: rgba(201,168,76,0.1); }
+  .btn-copiar:active { transform: scale(.97); }
+  .copied-msg {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--bg);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity .3s;
+    white-space: nowrap;
+  }
+  .copied-msg.show { opacity: 1; }
+
+  /* ── EMERGENCY BUTTON ───────────────────── */
+  .emergency-wrap {
+    padding: 16px 20px 0;
+  }
+  .btn-emergency {
+    width: 100%;
+    background: var(--red);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: background .2s, transform .1s;
+  }
+  .btn-emergency:hover { background: #e01515; }
+  .btn-emergency:active { transform: scale(.98); }
+  .emergency-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  /* ── EMERGENCY QUOTE (diferente estilo) ─── */
+  .emergency-quote {
+    background: linear-gradient(135deg, #2a0808 0%, #1a0505 100%);
+    border: 1px solid rgba(204,17,17,0.4);
+  }
+  .emergency-quote .quote-text { color: #ffcccc; }
+  .emergency-quote .quote-author { color: #ff6666; }
+
+  /* ── TOAST ──────────────────────────────── */
+  .toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--gold);
+    color: var(--bg);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border-radius: 50px;
+    opacity: 0;
+    transition: opacity .3s, transform .3s;
+    pointer-events: none;
+    z-index: 999;
+    white-space: nowrap;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ── FOOTER ─────────────────────────────── */
+  .footer {
+    text-align: center;
+    padding: 40px 20px 20px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* ── DIVIDER ────────────────────────────── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 28px 20px 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">Z A S C A</div>
+    <div class="tagline">El arte de poner a cada quién en su lugar.</div>
+  </header>
+
+  <!-- SELECCIONAR OBJETIVO -->
+  <section class="section">
+    <div class="section-label">Seleccionar objetivo</div>
+  </section>
+  <div class="cards-scroll" id="cards-scroll">
+    <div class="obj-card active" data-id="sabelotodo">
+      <span class="card-icon">🎓</span>
+      <span class="card-name">Sabelotodo</span>
+    </div>
+    <div class="obj-card" data-id="jefe">
+      <span class="card-icon">💼</span>
+      <span class="card-name">Jefe Vacío</span>
+    </div>
+    <div class="obj-card" data-id="vampiro">
+      <span class="card-icon">🧛</span>
+      <span class="card-name">Vampiro Energético</span>
+    </div>
+    <div class="obj-card" data-id="cenizo">
+      <span class="card-icon">🌧️</span>
+      <span class="card-name">El Cenizo</span>
+    </div>
+    <div class="obj-card" data-id="adulador">
+      <span class="card-icon">🪷</span>
+      <span class="card-name">El Adulador</span>
+    </div>
+    <div class="obj-card" data-id="mansplainer">
+      <span class="card-icon">📢</span>
+      <span class="card-name">El Mansplainer</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- AUTORÍA -->
+  <section class="section">
+    <div class="section-label">Autoría</div>
+  </section>
+  <div class="autores-row" id="autores-row">
+    <button class="autor-btn active" data-autor="Macedonio Fernández" title="Macedonio Fernández">M</button>
+    <button class="autor-btn" data-autor="Oscar Wilde" title="Oscar Wilde">W</button>
+    <button class="autor-btn" data-autor="Groucho Marx" title="Groucho Marx">G</button>
+    <button class="autor-btn" data-autor="Schopenhauer" title="Schopenhauer">S</button>
+    <button class="autor-btn" data-autor="Juan José Millás" title="Juan José Millás">ML</button>
+    <button class="autor-btn" data-autor="Dr. Mario A. Ramírez Barajas" title="Dr. Mario A. Ramírez Barajas">DR</button>
+  </div>
+  <div class="autor-tooltip" id="autor-tooltip">Macedonio Fernández</div>
+
+  <div class="divider"></div>
+
+  <!-- NIVEL DE VENENO -->
+  <section class="section">
+    <div class="section-label">
+      Nivel de veneno
+      <span class="nivel-value" id="nivel-value">Cáustico</span>
+    </div>
+  </section>
+  <div class="slider-wrap">
+    <input type="range" id="nivel-slider" min="0" max="2" value="1" step="1">
+    <div class="slider-labels">
+      <span>Sutil</span>
+      <span>Cáustico</span>
+      <span>Letal</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- QUOTE -->
+  <div class="quote-section">
+    <div class="quote-box" id="quote-box">
+      <div class="quote-placeholder">Elige objetivo y autoría,<br>luego pulsa <strong>Replicar</strong></div>
+    </div>
+    <div class="quote-author" id="quote-author" style="display:none"></div>
+  </div>
+
+  <!-- ACCIONES -->
+  <div class="actions">
+    <button class="btn-replicar" id="btn-replicar" onclick="obtenerZasca()">Replicar</button>
+    <button class="btn-copiar" id="btn-copiar" onclick="copiarFrase()">
+      <span class="copied-msg" id="copied-msg">¡Copiado!</span>
+      Copiar
+    </button>
+  </div>
+
+  <!-- EMERGENCIA -->
+  <div class="emergency-wrap">
+    <button class="btn-emergency" id="btn-emergency" onclick="emergencia()">
+      <span class="emergency-icon">⚠</span>
+      Botón de emergencia
+    </button>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">© MMXXIV · ZASCA Industrial Heavy · Dr. Mario A. Ramírez Barajas</div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script>
+  const API = 'https://zasca-production.up.railway.app';
+  const NIVELES = ['Sutil', 'Cáustico', 'Letal'];
+
+  let autorActual = 'Macedonio Fernández';
+  let nivelActual = 'Cáustico';
+  let fraseActual = '';
+  let isEmergency = false;
+
+  // ── Slider ───────────────────────────────
+  const slider = document.getElementById('nivel-slider');
+  const nivelVal = document.getElementById('nivel-value');
+
+  function updateSliderBg() {
+    const v = slider.value / 2 * 100;
+    slider.style.background = `linear-gradient(to right, var(--gold) 0%, var(--gold) ${v}%, var(--bg3) ${v}%, var(--bg3) 100%)`;
+  }
+
+  slider.addEventListener('input', () => {
+    nivelActual = NIVELES[slider.value];
+    nivelVal.textContent = nivelActual;
+    updateSliderBg();
+  });
+  updateSliderBg();
+
+  // ── Objetivo cards ───────────────────────
+  document.querySelectorAll('.obj-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.obj-card').forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+    });
+  });
+
+  // ── Autores ──────────────────────────────
+  document.querySelectorAll('.autor-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.autor-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      autorActual = btn.dataset.autor;
+      document.getElementById('autor-tooltip').textContent = autorActual;
+    });
+  });
+
+  // ── Quote box helpers ────────────────────
+  function showLoading() {
+    const box = document.getElementById('quote-box');
+    box.innerHTML = '<div class="quote-loading"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>';
+    box.classList.remove('emergency-quote');
+    document.getElementById('quote-author').style.display = 'none';
+  }
+
+  function showQuote(texto, autor, emergency = false) {
+    const box = document.getElementById('quote-box');
+    const authorEl = document.getElementById('quote-author');
+    box.innerHTML = `<div><div class="quote-text">"${texto}"</div></div>`;
+    if (emergency) {
+      box.classList.add('emergency-quote');
+    } else {
+      box.classList.remove('emergency-quote');
+    }
+    if (autor) {
+      authorEl.textContent = '— ' + autor;
+      authorEl.style.display = 'block';
+    } else {
+      authorEl.style.display = 'none';
+    }
+    fraseActual = texto;
+    isEmergency = emergency;
+  }
+
+  function showError(msg) {
+    const box = document.getElementById('quote-box');
+    box.innerHTML = `<div class="quote-placeholder" style="color:#cc5555">${msg}</div>`;
+    box.classList.remove('emergency-quote');
+    document.getElementById('quote-author').style.display = 'none';
+  }
+
+  // ── REPLICAR ─────────────────────────────
+  async function obtenerZasca() {
+    showLoading();
+    try {
+      const res = await fetch(`${API}/zasca`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ autor: autorActual, nivel_veneno: nivelActual })
+      });
+      if (!res.ok) throw new Error('Error ' + res.status);
+      const data = await res.json();
+      showQuote(data.texto, data.autor);
+    } catch(e) {
+      showError('Error conectando con el servidor.<br>Verifica tu conexión.');
+    }
+  }
+
+  // ── EMERGENCIA ───────────────────────────
+  async function emergencia() {
+    const btn = document.getElementById('btn-emergency');
+    btn.disabled = true;
+    showLoading();
+    try {
+      const res = await fetch(`${API}/emergencia`);
+      if (!res.ok) throw new Error('Error ' + res.status);
+      const data = await res.json();
+      showQuote(data.texto, 'Salida Elegante', true);
+    } catch(e) {
+      showError('Error conectando con el servidor.');
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  // ── COPIAR ───────────────────────────────
+  function copiarFrase() {
+    if (!fraseActual) { mostrarToast('Primero obtén un zasca'); return; }
+    navigator.clipboard.writeText(`"${fraseActual}" — ZASCA`)
+      .then(() => mostrarToast('¡Copiado al portapapeles!'))
+      .catch(() => mostrarToast('No se pudo copiar'));
+  }
+
+  // ── TOAST ────────────────────────────────
+  function mostrarToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2200);
+  }
+
+  // ── INIT: cargar un zasca automáticamente ─
+  window.addEventListener('DOMContentLoaded', () => obtenerZasca());
+</script>
+</body>
+</html>
