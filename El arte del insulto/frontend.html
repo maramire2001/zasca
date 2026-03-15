@@ -9,6 +9,7 @@
 <meta name="apple-mobile-web-app-title" content="ZASCA">
 <meta name="theme-color" content="#16110a">
 <meta name="description" content="El arte de poner a cada quién en su lugar. Motor literario de 134 frases de ataque elegante.">
+<link rel="manifest" href="/manifest.json">
 <title>ZASCA — El arte de poner a cada quién en su lugar</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -684,52 +685,10 @@
   // ── INIT: cargar un zasca automáticamente ─
   window.addEventListener('DOMContentLoaded', () => obtenerZasca());
 
-  // ── PWA: registrar service worker inline ─
+  // ── PWA: service worker y manifest reales ─
   if ('serviceWorker' in navigator) {
-    const swCode = `
-      const CACHE = 'zasca-v1';
-      self.addEventListener('install', e => {
-        e.waitUntil(caches.open(CACHE).then(c => c.addAll(['/'])));
-        self.skipWaiting();
-      });
-      self.addEventListener('activate', e => {
-        e.waitUntil(caches.keys().then(keys =>
-          Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-        ));
-        self.clients.claim();
-      });
-      self.addEventListener('fetch', e => {
-        if (e.request.mode === 'navigate') {
-          e.respondWith(fetch(e.request).catch(() => caches.match('/')));
-        }
-      });
-    `;
-    const blob = new Blob([swCode], { type: 'application/javascript' });
-    const swUrl = URL.createObjectURL(blob);
-    navigator.serviceWorker.register(swUrl).catch(() => {});
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
   }
-
-  // ── PWA: manifest dinámico ────────────────
-  const manifest = {
-    name: 'ZASCA — El arte del insulto literario',
-    short_name: 'ZASCA',
-    description: 'El arte de poner a cada quién en su lugar.',
-    start_url: '/',
-    display: 'standalone',
-    background_color: '#16110a',
-    theme_color: '#16110a',
-    orientation: 'portrait',
-    icons: [
-      { src: 'https://zasca-production.up.railway.app/favicon-192.png', sizes: '192x192', type: 'image/png' },
-      { src: 'https://zasca-production.up.railway.app/favicon-512.png', sizes: '512x512', type: 'image/png' }
-    ]
-  };
-  const manifestBlob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
-  const manifestUrl = URL.createObjectURL(manifestBlob);
-  const linkEl = document.createElement('link');
-  linkEl.rel = 'manifest';
-  linkEl.href = manifestUrl;
-  document.head.appendChild(linkEl);
 </script>
 </body>
 </html>
