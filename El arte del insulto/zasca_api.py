@@ -13,8 +13,10 @@ Docs interactivas:
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 from typing import Optional
+import os
 
 from zasca_engine import (
     filtrar_frase,
@@ -100,8 +102,16 @@ class BibliografiaItem(BaseModel):
 
 # ── Endpoints ─────────────────────────────────────────────────
 
-@app.get("/", tags=["General"])
+@app.get("/", tags=["General"], include_in_schema=False)
 def raiz():
+    """Sirve el frontend HTML."""
+    html_path = os.path.join(os.path.dirname(__file__), "frontend.html")
+    return FileResponse(html_path, media_type="text/html")
+
+
+@app.get("/api", tags=["General"])
+def api_info():
+    """Información JSON de la API (para integraciones externas)."""
     return {
         "app":     "ZASCA",
         "version": "2.0.0",
@@ -109,10 +119,10 @@ def raiz():
         "autoria": "Dr. Mario A. Ramírez Barajas",
         "frases":  134,
         "endpoints": {
-            "POST /zasca":      "Obtener zasca filtrado por autor y nivel",
-            "GET  /emergencia": "Salida elegante aleatoria",
-            "POST /refinar":    "Refinar insulto vulgar al estilo del autor",
-            "GET  /opciones":   "Listar autores y niveles válidos",
+            "POST /zasca":        "Obtener zasca filtrado por autor y nivel",
+            "GET  /emergencia":   "Salida elegante aleatoria",
+            "POST /refinar":      "Refinar insulto vulgar al estilo del autor",
+            "GET  /opciones":     "Listar autores y niveles válidos",
             "GET  /bibliografia": "Bibliografía del proyecto ZASCA",
         },
     }
