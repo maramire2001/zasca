@@ -109,6 +109,20 @@ def raiz():
     return FileResponse(html_path, media_type="text/html")
 
 
+@app.get("/icon-192.png", include_in_schema=False)
+def icon_192():
+    """Ícono PWA 192x192."""
+    icon_path = os.path.join(os.path.dirname(__file__), "icon-192.png")
+    return FileResponse(icon_path, media_type="image/png")
+
+
+@app.get("/icon-512.png", include_in_schema=False)
+def icon_512():
+    """Ícono PWA 512x512."""
+    icon_path = os.path.join(os.path.dirname(__file__), "icon-512.png")
+    return FileResponse(icon_path, media_type="image/png")
+
+
 @app.get("/manifest.json", include_in_schema=False)
 def pwa_manifest():
     """Manifiesto PWA para instalar como app en móvil."""
@@ -123,9 +137,15 @@ def pwa_manifest():
         "orientation": "portrait-primary",
         "icons": [
             {
-                "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' fill='%2316110a'/><text x='50%25' y='58%25' font-family='serif' font-size='260' font-weight='bold' fill='%23c9a84c' text-anchor='middle'>Z</text></svg>",
-                "sizes": "any",
-                "type": "image/svg+xml",
+                "src": "/icon-192.png",
+                "sizes": "192x192",
+                "type": "image/png",
+                "purpose": "any"
+            },
+            {
+                "src": "/icon-512.png",
+                "sizes": "512x512",
+                "type": "image/png",
                 "purpose": "any maskable"
             }
         ]
