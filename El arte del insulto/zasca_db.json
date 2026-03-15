@@ -1,0 +1,921 @@
+{
+  "zasca_db": {
+    "frases_ataque": [
+      {
+        "id": "MF-01",
+        "autor": "Macedonio Fernández",
+        "nivel": "Sutil",
+        "texto": "Usted posee la envidiable salud de lo no pensado; su mente es un domingo de campo donde las ideas se han negado a concurrir."
+      },
+      {
+        "id": "MF-02",
+        "autor": "Macedonio Fernández",
+        "nivel": "Cáustico",
+        "texto": "Es usted un místico de la palabra: ha logrado independizar por completo el discurso del conocimiento."
+      },
+      {
+        "id": "MF-03",
+        "autor": "Macedonio Fernández",
+        "nivel": "Letal",
+        "texto": "Es usted un pionero: ha logrado habitar el lenguaje sin la molesta necesidad de que el significado se presente a la cita."
+      },
+      {
+        "id": "MF-04",
+        "autor": "Macedonio Fernández",
+        "nivel": "Sutil",
+        "texto": "Admiro su audacia para navegar en la niebla sin la vulgar brújula de los datos."
+      },
+      {
+        "id": "MF-05",
+        "autor": "Macedonio Fernández",
+        "nivel": "Cáustico",
+        "texto": "Su inteligencia es una ausencia tan perfecta que casi llega a ser una presencia física en la habitación."
+      },
+      {
+        "id": "OW-01",
+        "autor": "Oscar Wilde",
+        "nivel": "Sutil",
+        "texto": "Admiro su valentía; solo una mente verdaderamente libre se atrevería a hablar con tanta autoridad sobre algo que no le ha sido presentado."
+      },
+      {
+        "id": "OW-02",
+        "autor": "Oscar Wilde",
+        "nivel": "Cáustico",
+        "texto": "Usted es tan profundamente superficial que me temo que, si llegara a tener un pensamiento propio, moriría de una crisis de identidad."
+      },
+      {
+        "id": "OW-03",
+        "autor": "Oscar Wilde",
+        "nivel": "Letal",
+        "texto": "Hablar con tanta autoridad sobre lo que se desconoce es el último lujo que le queda a la gente moderna."
+      },
+      {
+        "id": "OW-04",
+        "autor": "Oscar Wilde",
+        "nivel": "Sutil",
+        "texto": "Su intelecto es como un jardín japonés: muy bien cuidado, pero sin fruta que comer."
+      },
+      {
+        "id": "OW-05",
+        "autor": "Oscar Wilde",
+        "nivel": "Cáustico",
+        "texto": "Sería un placer estar de acuerdo con usted, pero entonces ambos estaríamos equivocados."
+      },
+      {
+        "id": "JM-01",
+        "autor": "Juan José Millás",
+        "nivel": "Sutil",
+        "texto": "Hablas como si estuvieras leyendo un manual de instrucciones de un aparato que todavía no se ha inventado."
+      },
+      {
+        "id": "JM-02",
+        "autor": "Juan José Millás",
+        "nivel": "Cáustico",
+        "texto": "Tu discurso es como una prótesis dental que no encaja: se mueve mucho, hace ruido al chocar y nos recuerda que falta algo original."
+      },
+      {
+        "id": "JM-03",
+        "autor": "Juan José Millás",
+        "nivel": "Letal",
+        "texto": "Hablar contigo es como masticar agua; una actividad que cansa la mandíbula sin alimentar ninguna parte del cuerpo."
+      },
+      {
+        "id": "JM-04",
+        "autor": "Juan José Millás",
+        "nivel": "Sutil",
+        "texto": "Tu inteligencia es una ciudad de noche vista desde un avión: parece que hay luz, pero no se ve a nadie caminando."
+      },
+      {
+        "id": "JM-05",
+        "autor": "Juan José Millás",
+        "nivel": "Cáustico",
+        "texto": "Tu lógica tiene la consistencia de una nube que intenta desesperadamente ser un ladrillo."
+      },
+      {
+        "id": "GM-01",
+        "autor": "Groucho Marx",
+        "nivel": "Sutil",
+        "texto": "Usted tiene la solución para todo, lo que nos falta ahora es un problema que encaje con sus disparates."
+      },
+      {
+        "id": "GM-02",
+        "autor": "Groucho Marx",
+        "nivel": "Cáustico",
+        "texto": "Usted tiene el don de la palabra, lástima que no tenga el don de usarla para decir algo."
+      },
+      {
+        "id": "GM-03",
+        "autor": "Groucho Marx",
+        "nivel": "Letal",
+        "texto": "Desde el día que entró en esta empresa, supe que llegaría lejos. De hecho, cuanto más lejos llegue, mejor para el negocio."
+      },
+      {
+        "id": "GM-04",
+        "autor": "Groucho Marx",
+        "nivel": "Sutil",
+        "texto": "He pasado una noche maravillosa, pero no ha sido esta."
+      },
+      {
+        "id": "GM-05",
+        "autor": "Groucho Marx",
+        "nivel": "Letal",
+        "texto": "Nunca olvido una cara, pero con usted haré una excepción."
+      },
+      {
+        "id": "SC-01",
+        "autor": "Schopenhauer",
+        "nivel": "Cáustico",
+        "texto": "Es usted la prueba de que el lenguaje es un órgano que puede sobrevivir incluso tras la muerte cerebral de la lógica."
+      },
+      {
+        "id": "SC-02",
+        "autor": "Schopenhauer",
+        "nivel": "Letal",
+        "texto": "Su verbosidad es el velo con el que la Voluntad intenta ocultar la indigencia de su espíritu; es un ruido biológico."
+      },
+      {
+        "id": "SC-03",
+        "autor": "Schopenhauer",
+        "nivel": "Cáustico",
+        "texto": "Su capacidad intelectual es un desierto donde hasta los espejismos se aburren y deciden marcharse."
+      },
+      {
+        "id": "SC-04",
+        "autor": "Schopenhauer",
+        "nivel": "Letal",
+        "texto": "Usted no habla, solo emite sonidos para interrumpir el silencio de los que pensamos."
+      },
+      {
+        "id": "MF-06",
+        "autor": "Macedonio Fernández",
+        "nivel": "Sutil",
+        "texto": "Usted no es un ignorante, es un ausente de la realidad que ha decidido enviar a su voz en su representación."
+      },
+      {
+        "id": "MF-07",
+        "autor": "Macedonio Fernández",
+        "nivel": "Cáustico",
+        "texto": "Su conversación tiene la fascinante cualidad de lo que no existe; es un vacío decorado con adjetivos."
+      },
+      {
+        "id": "MF-08",
+        "autor": "Macedonio Fernández",
+        "nivel": "Letal",
+        "texto": "Es usted tan original que ha logrado inventar una nueva forma de no decir nada utilizando todas las palabras del diccionario."
+      },
+      {
+        "id": "MF-09",
+        "autor": "Macedonio Fernández",
+        "nivel": "Letal",
+        "texto": "Si el pensamiento fuera una propiedad privada, usted viviría en la más absoluta indigencia."
+      },
+      {
+        "id": "MF-10",
+        "autor": "Macedonio Fernández",
+        "nivel": "Cáustico",
+        "texto": "Admiro cómo sostiene sus teorías: con la misma firmeza con la que un fantasma sostiene una puerta."
+      },
+      {
+        "id": "OW-06",
+        "autor": "Oscar Wilde",
+        "nivel": "Sutil",
+        "texto": "Perdonar a sus enemigos es una cosa, pero escuchar sus argumentos es una falta de gusto que no puedo permitirle."
+      },
+      {
+        "id": "OW-07",
+        "autor": "Oscar Wilde",
+        "nivel": "Cáustico",
+        "texto": "Es usted una prueba viviente de que la educación es algo admirable, pero de vez en cuando conviene recordar que nada que valga la pena saber puede ser enseñado."
+      },
+      {
+        "id": "OW-08",
+        "autor": "Oscar Wilde",
+        "nivel": "Letal",
+        "texto": "Tiene usted la capacidad de convertir cualquier tema brillante en una tarde de lluvia en un suburbio londinense."
+      },
+      {
+        "id": "OW-09",
+        "autor": "Oscar Wilde",
+        "nivel": "Letal",
+        "texto": "No tiene enemigos, pero sus amigos le detestan cordialmente cada vez que intenta explicar algo."
+      },
+      {
+        "id": "OW-10",
+        "autor": "Oscar Wilde",
+        "nivel": "Cáustico",
+        "texto": "Su estilo al hablar es impecable; es una lástima que el contenido sea tan vulgar como la verdad."
+      },
+      {
+        "id": "JM-06",
+        "autor": "Juan José Millás",
+        "nivel": "Sutil",
+        "texto": "Tu cerebro es como una habitación donde han quitado los muebles: hay mucho eco pero no hay dónde sentarse."
+      },
+      {
+        "id": "JM-07",
+        "autor": "Juan José Millás",
+        "nivel": "Cáustico",
+        "texto": "Hablas con la seguridad de un cirujano que opera con un cubierto de plástico."
+      },
+      {
+        "id": "JM-08",
+        "autor": "Juan José Millás",
+        "nivel": "Letal",
+        "texto": "Tu opinión es como un calcetín desparejado: nadie sabe de dónde ha salido y a nadie le sirve para nada."
+      },
+      {
+        "id": "JM-09",
+        "autor": "Juan José Millás",
+        "nivel": "Letal",
+        "texto": "Eres un error de imprenta en el libro de la lógica; una errata que se cree un capítulo entero."
+      },
+      {
+        "id": "JM-10",
+        "autor": "Juan José Millás",
+        "nivel": "Sutil",
+        "texto": "Tus palabras son como el humo: ocupan espacio pero no tienen estructura molecular."
+      },
+      {
+        "id": "GM-06",
+        "autor": "Groucho Marx",
+        "nivel": "Sutil",
+        "texto": "Podría decirse que es usted un hombre que se ha hecho a sí mismo, lo cual le libera a usted de culpar a otros de su ignorancia."
+      },
+      {
+        "id": "GM-07",
+        "autor": "Groucho Marx",
+        "nivel": "Cáustico",
+        "texto": "¿Qué hace usted aquí? ¿Acaso no hay ningún otro sitio donde pueda resultar igualmente molesto?"
+      },
+      {
+        "id": "GM-08",
+        "autor": "Groucho Marx",
+        "nivel": "Letal",
+        "texto": "Su mente es un tesoro, lástima que nadie haya encontrado la llave en los últimos cuarenta años."
+      },
+      {
+        "id": "GM-09",
+        "autor": "Groucho Marx",
+        "nivel": "Letal",
+        "texto": "No crea que le estoy tomando el pelo, para eso tendría usted que tener algo debajo."
+      },
+      {
+        "id": "GM-10",
+        "autor": "Groucho Marx",
+        "nivel": "Cáustico",
+        "texto": "Hay muchas cosas más importantes que el dinero, pero hoy no puedo recordarlas porque le estoy escuchando a usted."
+      },
+      {
+        "id": "SC-05",
+        "autor": "Schopenhauer",
+        "nivel": "Cáustico",
+        "texto": "La naturaleza le dio una voz para pedir comida, no para intentar convencernos de que tiene una opinión."
+      },
+      {
+        "id": "SC-06",
+        "autor": "Schopenhauer",
+        "nivel": "Letal",
+        "texto": "Usted es a la filosofía lo que un martillo es a un reloj de cristal: solo sirve para destruir la armonía."
+      },
+      {
+        "id": "SC-07",
+        "autor": "Schopenhauer",
+        "nivel": "Letal",
+        "texto": "El silencio es la única respuesta que su intelecto merece, pero mi paciencia es finita."
+      },
+      {
+        "id": "SC-08",
+        "autor": "Schopenhauer",
+        "nivel": "Sutil",
+        "texto": "La soledad es el destino de todos los espíritus excelentes; gracias a usted, entiendo por qué la soledad es un regalo."
+      },
+      {
+        "id": "SC-09",
+        "autor": "Schopenhauer",
+        "nivel": "Cáustico",
+        "texto": "Su entusiasmo por su propia ignorancia es la única voluntad de poder que reconozco en usted."
+      },
+      {
+        "id": "MF-11",
+        "autor": "Macedonio Fernández",
+        "nivel": "Sutil",
+        "texto": "Su ausencia de ideas es tan profunda que produce vértigo intelectual."
+      },
+      {
+        "id": "OW-11",
+        "autor": "Oscar Wilde",
+        "nivel": "Cáustico",
+        "texto": "La ignorancia es como una fruta exótica: emocionante de ver, pero amarga al probarla en su boca."
+      },
+      {
+        "id": "JM-11",
+        "autor": "Juan José Millás",
+        "nivel": "Sutil",
+        "texto": "Escucharte es como ver una película en un idioma que no hablas y sin subtítulos."
+      },
+      {
+        "id": "GM-11",
+        "autor": "Groucho Marx",
+        "nivel": "Letal",
+        "texto": "Estos son mis principios, pero si no le gustan... bueno, de todas formas usted no los entendería."
+      },
+      {
+        "id": "SC-10",
+        "autor": "Schopenhauer",
+        "nivel": "Letal",
+        "texto": "La vulgaridad de su pensamiento solo es superada por la insistencia con la que lo expone."
+      },
+      {
+        "id": "MF-12",
+        "autor": "Macedonio Fernández",
+        "nivel": "Sutil",
+        "texto": "Usted no llega tarde a las ideas, es que las ideas han decidido no esperarle."
+      },
+      {
+        "id": "OW-12",
+        "autor": "Oscar Wilde",
+        "nivel": "Letal",
+        "texto": "Ser natural es la más difícil de las poses; usted, en cambio, es naturalmente insoportable."
+      },
+      {
+        "id": "MF-13",
+        "autor": "Macedonio Fernández",
+        "nivel": "Letal",
+        "texto": "Su discurso es una mudanza de muebles en una casa donde no vive nadie."
+      },
+      {
+        "id": "MF-14",
+        "autor": "Macedonio Fernández",
+        "nivel": "Sutil",
+        "texto": "Usted tiene la rara virtud de ser un malentendido incluso cuando guarda silencio."
+      },
+      {
+        "id": "MF-15",
+        "autor": "Macedonio Fernández",
+        "nivel": "Cáustico",
+        "texto": "Admiro su fe en las palabras; cree que si amontona suficientes, acabará diciendo algo por accidente."
+      },
+      {
+        "id": "MF-16",
+        "autor": "Macedonio Fernández",
+        "nivel": "Letal",
+        "texto": "Es usted un arquitecto del aire; construye castillos de nada sobre cimientos de olvido."
+      },
+      {
+        "id": "MF-17",
+        "autor": "Macedonio Fernández",
+        "nivel": "Sutil",
+        "texto": "Su pensamiento es una línea recta que no conduce a ninguna geometría conocida."
+      },
+      {
+        "id": "OW-13",
+        "autor": "Oscar Wilde",
+        "nivel": "Sutil",
+        "texto": "Los que no tienen nada que decir son siempre los que más tardan en decirlo; es usted un maestro del tiempo."
+      },
+      {
+        "id": "OW-14",
+        "autor": "Oscar Wilde",
+        "nivel": "Cáustico",
+        "texto": "Es usted una de esas personas que vienen a las fiestas a aportar... su ausencia de criterio."
+      },
+      {
+        "id": "OW-15",
+        "autor": "Oscar Wilde",
+        "nivel": "Letal",
+        "texto": "No soy tan joven como para saberlo todo, pero usted es demasiado mayor para no saber nada."
+      },
+      {
+        "id": "OW-16",
+        "autor": "Oscar Wilde",
+        "nivel": "Letal",
+        "texto": "Su conversación es como un abanico: se mueve mucho, hace ruido y solo sirve para refrescar su propia vanidad."
+      },
+      {
+        "id": "OW-17",
+        "autor": "Oscar Wilde",
+        "nivel": "Sutil",
+        "texto": "Tiene usted una mente maravillosa para la decoración, pero lamento decirle que el intelecto no es un adorno."
+      },
+      {
+        "id": "JM-12",
+        "autor": "Juan José Millás",
+        "nivel": "Sutil",
+        "texto": "Tu cerebro es una bombilla fundida que se cree el sol de mediodía."
+      },
+      {
+        "id": "JM-13",
+        "autor": "Juan José Millás",
+        "nivel": "Cáustico",
+        "texto": "Tus ideas tienen la profundidad de un charco en un día de verano: se evaporan antes de que podamos medir su importancia."
+      },
+      {
+        "id": "JM-14",
+        "autor": "Juan José Millás",
+        "nivel": "Letal",
+        "texto": "Hablar contigo es como intentar leer un periódico bajo el agua: todo está borroso y acabas asfixiado."
+      },
+      {
+        "id": "JM-15",
+        "autor": "Juan José Millás",
+        "nivel": "Letal",
+        "texto": "Eres el repuesto de una pieza que nunca se rompe; totalmente innecesario en este mecanismo."
+      },
+      {
+        "id": "JM-16",
+        "autor": "Juan José Millás",
+        "nivel": "Sutil",
+        "texto": "Tu discurso tiene la textura de una galleta olvidada en un vaso de leche: blando y sin forma."
+      },
+      {
+        "id": "GM-12",
+        "autor": "Groucho Marx",
+        "nivel": "Sutil",
+        "texto": "No crea que soy un maleducado, es que usted me obliga a serlo para mantener el equilibrio."
+      },
+      {
+        "id": "GM-13",
+        "autor": "Groucho Marx",
+        "nivel": "Cáustico",
+        "texto": "Usted es la razón por la que Dios inventó el dedo índice: para señalarle la puerta."
+      },
+      {
+        "id": "GM-14",
+        "autor": "Groucho Marx",
+        "nivel": "Letal",
+        "texto": "Podría haber sido un gran pensador, pero se quedó en el \"podría\" y se olvidó del \"pensar\"."
+      },
+      {
+        "id": "GM-15",
+        "autor": "Groucho Marx",
+        "nivel": "Letal",
+        "texto": "¿Ha pensado alguna vez en dedicarse al silencio? Tiene usted un talento natural para ello cuando duerme."
+      },
+      {
+        "id": "GM-16",
+        "autor": "Groucho Marx",
+        "nivel": "Cáustico",
+        "texto": "No se moleste en explicarlo de nuevo; mi capacidad de asombro ante sus tonterías ya ha llegado al límite."
+      },
+      {
+        "id": "SC-11",
+        "autor": "Schopenhauer",
+        "nivel": "Cáustico",
+        "texto": "Su optimismo intelectual es el síntoma más claro de su absoluta falta de observación."
+      },
+      {
+        "id": "SC-12",
+        "autor": "Schopenhauer",
+        "nivel": "Letal",
+        "texto": "El mundo es mi representación, pero le aseguro que usted no aparece en mi versión favorita de la realidad."
+      },
+      {
+        "id": "SC-13",
+        "autor": "Schopenhauer",
+        "nivel": "Letal",
+        "texto": "Su existencia es un ruido innecesario en la sinfonía del pensamiento universal."
+      },
+      {
+        "id": "SC-14",
+        "autor": "Schopenhauer",
+        "nivel": "Sutil",
+        "texto": "La inteligencia es invisible para aquel que no la tiene; no me extraña que no me comprenda."
+      },
+      {
+        "id": "SC-15",
+        "autor": "Schopenhauer",
+        "nivel": "Cáustico",
+        "texto": "Usted usa el razonamiento como un ciego usa un espejo: no le sirve para nada pero le gusta tenerlo a mano."
+      },
+      {
+        "id": "MF-18",
+        "autor": "Macedonio Fernández",
+        "nivel": "Letal",
+        "texto": "Su inteligencia es una leyenda urbana; todos hablan de ella pero nadie la ha visto."
+      },
+      {
+        "id": "OW-18",
+        "autor": "Oscar Wilde",
+        "nivel": "Cáustico",
+        "texto": "Su mediocridad es lo único que tiene de auténtico; debería estar orgulloso."
+      },
+      {
+        "id": "JM-17",
+        "autor": "Juan José Millás",
+        "nivel": "Sutil",
+        "texto": "Eres como una señal de tráfico en mitad de un desierto: indicas mucho pero no hay nadie para seguirte."
+      },
+      {
+        "id": "GM-17",
+        "autor": "Groucho Marx",
+        "nivel": "Letal",
+        "texto": "He tenido una semana estupenda, pero comparada con esta charla, prefiero volver a tener la gripe."
+      },
+      {
+        "id": "SC-16",
+        "autor": "Schopenhauer",
+        "nivel": "Letal",
+        "texto": "La brevedad de la vida es una bendición cuando uno tiene que escucharle a usted."
+      },
+      {
+        "id": "MF-19",
+        "autor": "Macedonio Fernández",
+        "nivel": "Sutil",
+        "texto": "Usted no opina, usted simplemente hace eco de un vacío que no le pertenece."
+      },
+      {
+        "id": "OW-19",
+        "autor": "Oscar Wilde",
+        "nivel": "Letal",
+        "texto": "No le odio, simplemente me es indiferente de una manera muy activa y ruidosa."
+      },
+      {
+        "id": "MF-20",
+        "autor": "Macedonio Fernández",
+        "nivel": "Letal",
+        "texto": "Es usted un perfeccionista del vacío: no hay una sola mota de pensamiento que ensucie su discurso."
+      },
+      {
+        "id": "MF-21",
+        "autor": "Macedonio Fernández",
+        "nivel": "Sutil",
+        "texto": "Su mente es un hotel de paso para ideas que nunca se quedan a dormir."
+      },
+      {
+        "id": "MF-22",
+        "autor": "Macedonio Fernández",
+        "nivel": "Cáustico",
+        "texto": "Usted no habla desde el conocimiento, habla desde una nostalgia de la inteligencia que nunca tuvo."
+      },
+      {
+        "id": "OW-20",
+        "autor": "Oscar Wilde",
+        "nivel": "Sutil",
+        "texto": "Ser inteligible es ser descubierto; le felicito por mantener su misterio intacto a base de no decir nada."
+      },
+      {
+        "id": "OW-21",
+        "autor": "Oscar Wilde",
+        "nivel": "Cáustico",
+        "texto": "Su conversación es como un vestido de mala calidad: se deshace en cuanto alguien intenta tocar la tela."
+      },
+      {
+        "id": "OW-22",
+        "autor": "Oscar Wilde",
+        "nivel": "Letal",
+        "texto": "La tragedia de su vida es que tiene el alma de un genio y la capacidad mental de un perchero."
+      },
+      {
+        "id": "JM-18",
+        "autor": "Juan José Millás",
+        "nivel": "Sutil",
+        "texto": "Tu discurso es como un electrodoméstico en garantía: nadie sabe cómo funciona pero todos esperamos que no se rompa más."
+      },
+      {
+        "id": "JM-19",
+        "autor": "Juan José Millás",
+        "nivel": "Cáustico",
+        "texto": "Eres una nota a pie de página escrita con una letra tan mala que nadie se molesta en descifrar."
+      },
+      {
+        "id": "JM-20",
+        "autor": "Juan José Millás",
+        "nivel": "Letal",
+        "texto": "Hablar contigo es como intentar abrir una puerta tirando de ella cuando claramente pone \"Empuje\"."
+      },
+      {
+        "id": "GM-18",
+        "autor": "Groucho Marx",
+        "nivel": "Sutil",
+        "texto": "He tenido una charla muy amena, lástima que haya sido conmigo mismo mientras usted hablaba."
+      },
+      {
+        "id": "GM-19",
+        "autor": "Groucho Marx",
+        "nivel": "Cáustico",
+        "texto": "¿Sabe qué? Le pagaría por su silencio, pero me temo que usted no sabe lo que vale."
+      },
+      {
+        "id": "GM-20",
+        "autor": "Groucho Marx",
+        "nivel": "Letal",
+        "texto": "Su inteligencia es como un rayo: rápida, destructiva y rara vez aparece dos veces en el mismo sitio."
+      },
+      {
+        "id": "SC-17",
+        "autor": "Schopenhauer",
+        "nivel": "Cáustico",
+        "texto": "Su voluntad de hablar es proporcionalmente inversa a su capacidad de razonar."
+      },
+      {
+        "id": "SC-18",
+        "autor": "Schopenhauer",
+        "nivel": "Letal",
+        "texto": "Escucharle es un ejercicio de ascesis; uno aprende a desear la muerte para dejar de oírle."
+      },
+      {
+        "id": "SC-19",
+        "autor": "Schopenhauer",
+        "nivel": "Sutil",
+        "texto": "Usted es la prueba de que el universo tiende al desorden, empezando por su sintaxis."
+      }
+    ],
+    "frases_usuario": [
+      {
+        "id": "U-01",
+        "nivel": "Directo",
+        "texto": "Es impresionante cómo hablas con tanta seguridad sin que la información te distraiga."
+      },
+      {
+        "id": "U-02",
+        "nivel": "Directo",
+        "texto": "Hablas siempre sin saber lo que dices, lo cual es un talento casi deportivo."
+      },
+      {
+        "id": "U-03",
+        "nivel": "Directo",
+        "texto": "Tu seguridad es inversamente proporcional a tu conocimiento."
+      },
+      {
+        "id": "U-04",
+        "nivel": "Directo",
+        "texto": "Eres el ejemplo perfecto de que el mapa no es el territorio, sobre todo porque tú ni siquiera tienes mapa."
+      },
+      {
+        "id": "U-05",
+        "nivel": "Directo",
+        "texto": "Hablas tanto que tu lengua debe de tener más músculos que tu cerebro."
+      },
+      {
+        "id": "U-06",
+        "nivel": "Directo",
+        "texto": "Tienes una opinión para cada tema, y lo más sorprendente es que todas son incorrectas."
+      },
+      {
+        "id": "U-07",
+        "nivel": "Directo",
+        "texto": "Tu capacidad para ignorar los hechos es casi un superpoder."
+      },
+      {
+        "id": "U-08",
+        "nivel": "Directo",
+        "texto": "Si la confusión fuera oro, usted sería la persona más rica del mundo."
+      },
+      {
+        "id": "U-09",
+        "nivel": "Directo",
+        "texto": "Tienes la habilidad de explicar cosas que no entiendes a gente que no te escucha."
+      },
+      {
+        "id": "U-10",
+        "nivel": "Directo",
+        "texto": "Tu seguridad es el refugio de tu falta de argumentos."
+      },
+      {
+        "id": "U-11",
+        "nivel": "Directo",
+        "texto": "No es que estés equivocado, es que tu error es tan grande que ha creado su propio código postal."
+      },
+      {
+        "id": "U-12",
+        "nivel": "Directo",
+        "texto": "Me fascina cómo puedes hablar tanto tiempo sin que una sola idea cruce la frontera de tu boca."
+      },
+      {
+        "id": "U-13",
+        "nivel": "Directo",
+        "texto": "Eres la prueba viviente de que el sentido común no es un requisito para la vida biológica."
+      },
+      {
+        "id": "U-14",
+        "nivel": "Directo",
+        "texto": "Tienes la profundidad de un plato llano y la transparencia de un muro de hormigón."
+      },
+      {
+        "id": "U-15",
+        "nivel": "Directo",
+        "texto": "Es fascinante ver cómo sobrevives sin que la lógica te afecte lo más mínimo."
+      },
+      {
+        "id": "U-16",
+        "nivel": "Directo",
+        "texto": "Tu opinión tiene la validez de un billete de monopolio en un banco central."
+      },
+      {
+        "id": "U-17",
+        "nivel": "Directo",
+        "texto": "Me gustaría darte la razón, pero no quiero ser cómplice de tu confusión."
+      },
+      {
+        "id": "U-18",
+        "nivel": "Directo",
+        "texto": "Hablas tanto que el silencio a tu alrededor se siente como un aplauso."
+      }
+    ],
+    "emergencia": [
+      {
+        "id": "E-01",
+        "texto": "Siento que mi admiración por su estilo le haya resultado abrumadora.",
+        "tipo": "salida_elegante"
+      },
+      {
+        "id": "E-02",
+        "texto": "Aprecio su punto de vista; necesito procesarlo en absoluto silencio.",
+        "tipo": "salida_elegante"
+      },
+      {
+        "id": "E-03",
+        "texto": "Lamento que la profundidad de mi observación haya causado este roce; prefiero retirar la palabra antes que el respeto.",
+        "tipo": "salida_elegante"
+      },
+      {
+        "id": "E-04",
+        "texto": "Es posible que mi comentario haya sido demasiado técnico para el tono de esta charla; mis disculpas.",
+        "tipo": "salida_elegante"
+      },
+      {
+        "id": "E-05",
+        "texto": "Entiendo que no estemos en la misma frecuencia; prefiero dejarlo aquí por el bien de la armonía.",
+        "tipo": "salida_elegante"
+      },
+      {
+        "id": "E-06",
+        "texto": "Su punto es tan... particular, que prefiero no contaminarlo con mi respuesta.",
+        "tipo": "salida_elegante"
+      },
+      {
+        "id": "E-07",
+        "texto": "Quizás mi perspectiva es demasiado ecléctica para este momento; continuemos otro día.",
+        "tipo": "salida_elegante"
+      },
+      {
+        "id": "E-08",
+        "texto": "Le concedo la razón, no porque la tenga, sino porque me he quedado sin tiempo para debatirla.",
+        "tipo": "salida_elegante"
+      },
+      {
+        "id": "E-09",
+        "texto": "Fascinante. Me retiro antes de que esta conversación se convierta en algo útil.",
+        "tipo": "salida_elegante"
+      },
+      {
+        "id": "E-10",
+        "texto": "Siento que estamos en niveles de realidad distintos; mejor lo dejamos aquí.",
+        "tipo": "salida_elegante"
+      },
+      {
+        "id": "E-11",
+        "texto": "Su originalidad me ha dejado bloqueado. Prefiero no responder para no estropearla.",
+        "tipo": "salida_elegante"
+      },
+      {
+        "id": "E-12",
+        "texto": "Esta conversación ha superado mis expectativas de surrealismo por hoy. Hasta pronto.",
+        "tipo": "salida_elegante"
+      },
+      {
+        "id": "E-13",
+        "texto": "Me retiro; mi capacidad para procesar este nivel de \"genialidad\" ha caducado.",
+        "tipo": "salida_elegante"
+      }
+    ],
+    "autores_pantalla": [
+      {
+        "id": "MF",
+        "nombre": "Macedonio Fernández",
+        "inicial": "M"
+      },
+      {
+        "id": "OW",
+        "nombre": "Oscar Wilde",
+        "inicial": "W"
+      },
+      {
+        "id": "JM",
+        "nombre": "Juan José Millás",
+        "inicial": "ML"
+      },
+      {
+        "id": "GM",
+        "nombre": "Groucho Marx",
+        "inicial": "G"
+      },
+      {
+        "id": "SC",
+        "nombre": "Schopenhauer",
+        "inicial": "S"
+      },
+      {
+        "id": "DR",
+        "nombre": "Dr. Mario A. Ramírez Barajas",
+        "inicial": "DR"
+      }
+    ],
+    "estilos_autor": {
+      "Macedonio Fernández": {
+        "descripcion": "Metafísica del vacío, paradojas existenciales y cortesía extrema que confunde.",
+        "patron": "Usar metáforas del vacío y la nada; cortesía desconcertante; paradojas filosóficas elegantes.",
+        "muletillas": [
+          "la nada",
+          "ausencia",
+          "vacío",
+          "metafísicamente",
+          "lo no pensado"
+        ]
+      },
+      "Oscar Wilde": {
+        "descripcion": "Esteticismo aristocrático, cinismo brillante y la paradoja como arma social.",
+        "patron": "Invertir lo esperado con elegancia; paradojas brillantes; tono aristocrático; referencias a la sociedad.",
+        "muletillas": [
+          "debo admitirlo",
+          "sin duda",
+          "me temo",
+          "es curioso que",
+          "rara virtud"
+        ]
+      },
+      "Juan José Millás": {
+        "descripcion": "Diagnóstico clínico, visión de objetos extraños y anatomía de lo cotidiano.",
+        "patron": "Metáforas médicas o de objetos cotidianos; distancia analítica; lo extraño en lo familiar.",
+        "muletillas": [
+          "clínicamente",
+          "síntoma",
+          "como si",
+          "tiene la textura de",
+          "es como"
+        ]
+      },
+      "Groucho Marx": {
+        "descripcion": "Vodevil, rapidez, juegos de palabras y sarcasmo directo de clase trabajadora.",
+        "patron": "Respuesta rápida y directa; juego de palabras; sarcasmo sin adornos; remate inesperado.",
+        "muletillas": [
+          "no digo que",
+          "solo digo",
+          "de hecho",
+          "lástima que",
+          "podría"
+        ]
+      },
+      "Schopenhauer": {
+        "descripcion": "Pesimismo antropológico, mazo lógico y desprecio intelectual profundo.",
+        "patron": "Referencias a la Voluntad y el pesimismo; lógica implacable; desprecio intelectual sin adornos.",
+        "muletillas": [
+          "la Voluntad",
+          "el sufrimiento",
+          "inevitablemente",
+          "confirma",
+          "la razón dicta"
+        ]
+      },
+      "Dr. Mario A. Ramírez Barajas": {
+        "descripcion": "Precisión académica, ironía diagnóstica y rigor conceptual con humor soterrado.",
+        "patron": "Registro académico-clínico; diagnósticos con humor; citar la evidencia en su contra; precisión quirúrgica.",
+        "muletillas": [
+          "la evidencia sugiere",
+          "según los datos",
+          "clínicamente hablando",
+          "el diagnóstico es",
+          "con todo respeto académico"
+        ]
+      }
+    },
+    "bibliografia": [
+      {
+        "autor": "Fernández, M.",
+        "año": 2026,
+        "titulo": "Teoría de la Nada Aplicada al Diálogo y Papeles de Recienvenido",
+        "editorial": "Edición de la Eternidad"
+      },
+      {
+        "autor": "Millás, J. J.",
+        "año": 2026,
+        "titulo": "Anatomía de la Palabra Punzante y el Cuerpo Extraño",
+        "editorial": "Ediciones El Visor"
+      },
+      {
+        "autor": "Wilde, O.",
+        "año": 2026,
+        "titulo": "Aforismos sobre la Incompetencia Elegante y la Estética del Pecado Intelectual",
+        "editorial": "Oxford Decadence Press"
+      },
+      {
+        "autor": "Marx, G.",
+        "año": 2026,
+        "titulo": "Amo a la Humanidad, es a la Gente a la que no Soporto: Manual de Vodevil Retórico",
+        "editorial": "Vodevil Press"
+      },
+      {
+        "autor": "Schopenhauer, A.",
+        "año": 2026,
+        "titulo": "Eristische Dialektik: El Arte de Tener Razón y la Voluntad como Ruido",
+        "editorial": "Frankfurt Philosophical Press"
+      },
+      {
+        "autor": "Ivy, L.",
+        "año": 2026,
+        "titulo": "Arquitectura de la Ironía en Entornos Digitales y UX para el Desplante",
+        "editorial": "Tech-Rhetoric Publications"
+      }
+    ]
+  }
+}
